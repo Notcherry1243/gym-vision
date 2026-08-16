@@ -1,0 +1,27 @@
+### Health check
+GET http://localhost:4000/health
+
+### Generate routine (hardcoded detected equipment, Phase 1 stub exercises)
+POST http://localhost:4000/generate-routine
+Content-Type: application/json
+
+{
+  "detectedEquipment": [
+    { "id": "dumbbell", "label": "Dumbbells", "confidence": 0.95, "sourcePhotoIndex": 0, "userConfirmed": true },
+    { "id": "bench", "label": "Bench", "confidence": 0.9, "sourcePhotoIndex": 0, "userConfirmed": true }
+  ],
+  "goal": "biceps",
+  "intensity": "light"
+}
+
+### Voice characters list
+GET http://localhost:4000/voice-characters
+
+### TTS (requires GOOGLE_TTS_API_KEY / ELEVENLABS_API_KEY set in server/.env)
+POST http://localhost:4000/tts
+Content-Type: application/json
+
+{
+  "characterId": "hype_coach",
+  "scriptKey": "start"
+}

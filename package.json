@@ -1,0 +1,18 @@
+{
+  "name": "gym-vision",
+  "private": true,
+  "workspaces": [
+    "app",
+    "server",
+    "shared",
+    "web"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev --workspace=server",
+    "dev:app": "npm run start --workspace=app",
+    "dev:web": "npm run dev --workspace=web"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.4"
+  }
+}
